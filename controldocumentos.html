@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inspeccion Vehicular</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <div  id="text0">Control de Documentos</div><br>
+                <table class="content-table">
+                    <thead> 
+                        <tr> 
+                            <th>Documentos</th> 
+                            <th>Si/No</th> 
+                            <th>Fecha de Vencimiento</th> 
+                            <th>Obvservaciones</th>
+                        </tr> 
+                    </thead>
+                    <tbody> 
+                        <tr>
+                            <td>Tarjeta de Circulacion</td> 
+                        <td>
+                            <select name="pets" id="pet-select" >
+                                <option value="Opcion" block>      </option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                            <td>
+                                <div class="input_div">
+                                        <input type="date" id="start" class="box_2" 
+                                                    min="2023-01-01" max="2027-12-31">
+                                </div>
+                            </td>
+                            <td><input type="text" class="box_2" placeholder="Observaciones"></td>
+                        </tr> 
+                           <td>Licencia de Conducir</td> 
+                           <td><select name="pets" id="pet-select" >
+                            <option value="Opcion" block>      </option>
+                            <option value="Si">Si</option>
+                            <option value="No">No</option>
+                        </select></td>
+                           <td>
+                            <div class="input_div">
+                                    <input type="date" id="start" class="box_2" 
+                                                min="2023-01-01" max="2027-12-31">
+                            </div>
+                           </td>
+                           <td><input type="text" class="box_2" placeholder="Observaciones"></td>
+                        </tr> 
+                        <tr> 
+                            <td>Poliza de Seguro</td> 
+                            <td><select name="pets" id="pet-select" >
+                                <option value="Opcion" block>      </option>
+                                <option value="Si">Si</option>
+                                <option value="No">No</option>
+                            </select></td>
+                            <td>
+                                <div class="input_div">
+                                        <input type="date" id="start" class="box_2" 
+                                                    min="2023-01-01" max="2027-12-31">
+                                </div>
+                                    </td>
+                                <td><input type="text" class="box_2" placeholder="Observaciones"></td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <div  id="text0">Datos del Conductor Encagado del Vehiculo</div><br>
+                    <label>Nombre:</label><br><br>
+                    <input type="text" id="name" class="box" placeholder="Nombre"> <br>
+                </body>
+                </html>

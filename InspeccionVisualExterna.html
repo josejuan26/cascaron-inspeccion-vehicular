@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inspeccion Visual Externa</title>
+    <link rel="stylesheet" href="CSS/InspeccionVisualExterna.css">
+   
+</head>
+
+<body>
+
+<header>
+    <h1 class="title">Inspeccion Visual Externa</h1>
+
+    <p>Para golpes marque una X en la figura en la posición en donde este el golpe. <br> 
+        Para rayones marque un O en la figura en la posición en donde este el rayón.<br> 
+        *Por cada golpe o rayón que se observe se restara un punto de puntaje obtenido.<br>
+        </p>
+   
+    <style>
+        canvas {
+       display: block;
+       margin: auto;
+       width: 600px;
+       height: 450px;
+       background-image:url(IMG/carro\ 1.png);
+        } 
+
+        .img{
+
+       display: block;
+       margin: auto;
+       width: 400px;
+       height: 220px;
+       background-image:url(IMG/llantas1.png);
+
+        }
+
+
+        
+    </style>
+    
+        <canvas id="pizarra"></canvas><br>
+        <a class="img" id="pizarra"></a><br>
+    
+    <script>
+        //======================================================================
+        // VARIABLES
+        //======================================================================
+        let miCanvas = document.querySelector('#pizarra');
+        let lineas = [];
+        let correccionX = 0;
+        let correccionY = 0;
+        let pintarLinea = false;
+        // Marca el nuevo punto
+        let nuevaPosicionX = 0;
+        let nuevaPosicionY = 0;
+    
+        let posicion = miCanvas.getBoundingClientRect()
+        correccionX = posicion.x;
+        correccionY = posicion.y;
+    
+        miCanvas.width = 600;
+        miCanvas.height = 450;
+
+        //======================================================================
+        // FUNCIONES
+        //======================================================================
+    
+        /**
+         * Funcion que empieza a dibujar la linea
+         */
+        function empezarDibujo () {
+            pintarLinea = true;
+            lineas.push([]);
+        };
+        
+        /**
+         * Funcion que guarda la posicion de la nueva línea
+         */
+        function guardarLinea() {
+            lineas[lineas.length - 1].push({
+                x: nuevaPosicionX,
+                y: nuevaPosicionY
+            });
+        }
+    
+        /**
+         * Funcion dibuja la linea
+         */
+        function dibujarLinea (event) {
+            event.preventDefault();
+            if (pintarLinea) {
+                let ctx = miCanvas.getContext('2d')
+                // Estilos de linea
+                ctx.lineJoin = ctx.lineCap = 'round';
+                ctx.lineWidth =5;
+                // Color de la linea
+                ctx.strokeStyle = '#323232';
+                // Marca el nuevo punto
+                if (event.changedTouches == undefined) {
+                    // Versión ratón
+                    nuevaPosicionX = event.layerX;
+                    nuevaPosicionY = event.layerY;
+                } else {
+                    // Versión touch, pantalla tactil
+                    nuevaPosicionX = event.changedTouches[0].pageX - correccionX;
+                    nuevaPosicionY = event.changedTouches[0].pageY - correccionY;
+                }
+                // Guarda la linea
+                guardarLinea();
+                // Redibuja todas las lineas guardadas
+                ctx.beginPath();
+                lineas.forEach(function (segmento) {
+                    ctx.moveTo(segmento[0].x, segmento[0].y);
+                    segmento.forEach(function (punto, index) {
+                        ctx.lineTo(punto.x, punto.y);
+                    });
+                });
+                ctx.stroke();
+            }
+        }
+    
+        /**
+         * Funcion que deja de dibujar la linea
+         */
+        function pararDibujar () {
+            pintarLinea = false;
+            guardarLinea();
+        }
+    
+        //======================================================================
+        // EVENTOS
+        //======================================================================
+    
+        // Eventos raton
+        miCanvas.addEventListener('mousedown', empezarDibujo, false);
+        miCanvas.addEventListener('mousemove', dibujarLinea, false);
+        miCanvas.addEventListener('mouseup', pararDibujar, false);
+    
+        // Eventos pantallas táctiles
+        miCanvas.addEventListener('touchstart', empezarDibujo, false);
+        miCanvas.addEventListener('touchmove', dibujarLinea, false);
+    
+    
+    
+    </script>
+
+<center>
+    <input type="file"
+    id="avatar" name="avatar"
+    accept="image/png, image/jpeg"></center><br>
+
+    
+    <h1 class="title">Puntuaje</h1>
+
+    <label>Puntuaje del cofre e interior:</label><br>
+         <input type="text" id="name" class="box" placeholder=""><br>
+
+         <label>Puntuaje Exterior:</label><br>
+         <input type="text" id="name" class="box" placeholder="(-)"><br>
+
+         <label>Puntuaje Total:</label><br>
+         <input type="text" id="name" class="box" placeholder=""><br>
+
+
+         <center>
+             <a class="button" href="interior.html">Atras</a>
+             <a class="button" href="controldocumentos.html">Siguiente</a>
+             </center><br><br><br>      
+</header>
+  <ul>
+         <center><li><a class="icon_document" href="crear_registro.html"><br> Registros</a></li>
+         <li><a class="icon_auto" href="index.html"><br>Autos</a></li>
+         <li><a  class="icon_user" href="index.html"><br>Cuenta</a></li></center>
+     </ul>
+</body>
+</html>
+  
+
+

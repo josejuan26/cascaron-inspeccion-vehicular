@@ -1,0 +1,198 @@
+@font-face {
+    font-family: NotoSans;
+    src: url(../fonts/NotoSans-Bold.ttf);
+}
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway-Regular.ttf);
+}
+@font-face {
+    font-family: NotoSans-Regular;
+    src: url(../fonts/NotoSans-Regular.ttf);
+}
+@font-face {
+    font-family: FontAwesome;
+    src: url(../icons/css/fontawesome.css);
+  }
+
+head{
+    background-color: #E0E1E9;
+}
+header{
+    background-color: #e6e6e6;
+    max-height: auto;
+    border-radius: 10px; 
+    margin: 20pt;
+}
+label{
+    font-family: 'NotoSans-Regular';
+    padding-left: 45px;
+
+}
+p{
+    font-family: 'NotoSans-Regular';
+    background-color: #ffff;
+    border-radius: 10px;
+    text-align: justify;
+    text-indent: 15px;
+    max-height: auto;
+    padding: 3%;
+}
+button{
+    background-color: #323232;
+    font-family: NotoSans-Regular;
+    border-radius: 10px;
+    border:none;
+    height: 36px;
+    width: 160px;
+    color:#ffff; 
+}
+select{
+  width: 72px;
+  height: 34px;
+  border-radius: 10px;
+  border: none;
+  background-color: #FFFFFF ;
+}
+.content-table thead tr { 
+    background-color: #FFFFFF; 
+    color: #A0A0A0; 
+    text-align: center; 
+    font-family: NotoSans-Regular;
+    font-size: 16px;
+}
+.content-table th, .content-table td{ 
+    padding: 12px ;
+    font-family: NotoSans-Regular;
+    text-align: center;
+    border-radius: 20px 20px 0px 0px;
+    
+}
+.content-table{
+    width: 100%;
+}
+.box{
+  margin-bottom: 1.5rem;
+  background: #ffff;
+  border: none;
+  height: 48px;
+  border-radius: 10px;
+  min-width: 4rem;
+  width: 600px;
+  display: block;
+  margin-left: 37px;
+}
+.box1{
+    margin-bottom: 1.5rem;
+    background: #ffff;
+    border: none;
+    height: 48px;
+    border-radius: 10px;
+    min-width: 100px;
+    width: 180px;
+    display: block;
+    margin-left: 37px;
+    object-fit: cover;
+    
+  }
+  .box_2{
+    background: #ffff;
+    border: none;
+    border-radius: 10px;
+    height: 35px;
+  }
+#text0{
+     font-family: NotoSans;
+    font-size: 24pt; 
+    text-align: center;
+}
+
+:focus {
+    outline: 3px solid #A0A0A0;
+  }
+#start{
+    font-family:'NotoSans-Regular';
+}
+.input_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-gap: 3px;
+  }
+  .input_container_1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3px;
+  }
+  .input_div{
+    display: flex;
+    flex-direction:column;
+  }
+  .mycheck1 {
+    cursor: pointer;
+    background-color: #fff;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20stroke-width%3D%221.5%22%20stroke%3D%22currentColor%22%20class%3D%22w-6%20h-6%22%3E%0A%20%20%3Cpath%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M6%2018L18%206M6%206l12%2012%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+    width: 24px;
+    height: 24px;
+    appearance: none;
+    border-radius: 8px;
+    border: none;
+    background-position: 0 -2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  .mycheck1:checked {
+    background-color: #F3003F;
+    color: #F3003F;
+    background-position: 0 0;
+    border-radius: 10px;
+  }
+
+  .mycheck_2 {
+    cursor: pointer;
+    background-color: #fff;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%3E%3C!--!%20Font%20Awesome%20Pro%206.3.0%20by%20%40fontawesome%20-%20https%3A%2F%2Ffontawesome.com%20License%20-%20https%3A%2F%2Ffontawesome.com%2Flicense%20(Commercial%20License)%20Copyright%202023%20Fonticons%2C%20Inc.%20--%3E%3Cpath%20d%3D%22M512%20256C512%20397.4%20397.4%20512%20256%20512C114.6%20512%200%20397.4%200%20256C0%20114.6%20114.6%200%20256%200C397.4%200%20512%20114.6%20512%20256zM256%2048C141.1%2048%2048%20141.1%2048%20256C48%20370.9%20141.1%20464%20256%20464C370.9%20464%20464%20370.9%20464%20256C464%20141.1%20370.9%2048%20256%2048z%22%2F%3E%3C%2Fsvg%3E");
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border-radius: 8px;
+    appearance: none;
+    border: none;
+    background-position: 0 -2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  .mycheck_2:checked {
+    background-color: #4D81C2;
+    color: #4D81C2;
+    background-position: 0 0;
+    border-radius: 10px;
+  }
+  .mycheck_3 {
+    cursor: pointer;
+    background-color: #fff;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2024%2024%22%20stroke-width%3D%221.5%22%20stroke%3D%22currentColor%22%20class%3D%22w-6%20h-6%22%3E%0A%20%20%3Cpath%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M4.5%2012.75l6%206%209-13.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    appearance: none;
+    border: none;
+    background-position: 0 -2rem;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    
+  }
+  .mycheck_3:checked {
+    background-color: #00AE00;
+    color: #00AE00;
+    background-position: 0 0;
+    border-radius: 10px;
+  }
+  
